@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  origin_id: 1
+  destination_id: 1
+  departure_time: 2019-08-21 21:57:24
+  arrival_time: 2019-08-21 21:57:24
+  passenger: one
+
+two:
+  number: 1
+  origin_id: 1
+  destination_id: 1
+  departure_time: 2019-08-21 21:57:24
+  arrival_time: 2019-08-21 21:57:24
+  passenger: two
