@@ -47,3 +47,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # The solution to keep your Rails ActiveRecord migrations up to date.
 gem 'migration_data'
+
+# Rate Limiting / Throttling
+gem 'rack-attack'
