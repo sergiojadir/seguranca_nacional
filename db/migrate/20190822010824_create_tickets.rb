@@ -6,6 +6,8 @@ class CreateTickets < ActiveRecord::Migration[5.2]
 
       t.integer :seat_number
 
+      t.date :date
+
       t.timestamps
     end
   end

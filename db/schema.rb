@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_22_010824) do
+ActiveRecord::Schema.define(version: 2019_08_23_025858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,12 +56,23 @@ ActiveRecord::Schema.define(version: 2019_08_22_010824) do
     t.string "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "suspicious"
+  end
+
+  create_table "suspicious_passengers", force: :cascade do |t|
+    t.bigint "passenger_id"
+    t.bigint "ticket_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["passenger_id"], name: "index_suspicious_passengers_on_passenger_id"
+    t.index ["ticket_id"], name: "index_suspicious_passengers_on_ticket_id"
   end
 
   create_table "tickets", force: :cascade do |t|
     t.bigint "passenger_id"
     t.bigint "flight_id"
     t.integer "seat_number"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["flight_id"], name: "index_tickets_on_flight_id"
@@ -70,6 +81,8 @@ ActiveRecord::Schema.define(version: 2019_08_22_010824) do
 
   add_foreign_key "aeroportos", "cidades"
   add_foreign_key "cidades", "estados"
+  add_foreign_key "suspicious_passengers", "passengers"
+  add_foreign_key "suspicious_passengers", "tickets"
   add_foreign_key "tickets", "flights"
   add_foreign_key "tickets", "passengers"
 end
