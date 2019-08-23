@@ -33,5 +33,6 @@ module SegurancaNacional
     config.api_only = true
 
     config.middleware.use Rack::Attack
+    config.active_job.queue_adapter = :sidekiq
   end
 end
