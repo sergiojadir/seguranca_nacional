@@ -19,6 +19,7 @@ Bundler.require(*Rails.groups)
 
 module SegurancaNacional
   class Application < Rails::Application
+    config.autoload_paths << File.join(config.root, "lib")
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 

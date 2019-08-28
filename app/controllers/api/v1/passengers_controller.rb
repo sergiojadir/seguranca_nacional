@@ -1,4 +1,4 @@
-class PassengersController < ApplicationController
+class Api::V1::PassengersController < ApplicationController
   before_action :set_passenger, only: [:show, :update, :destroy]
 
   # GET /passengers

@@ -1,4 +1,4 @@
-class FlightsController < ApplicationController
+class Api::V1::FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :update, :destroy]
 
   # GET /flights

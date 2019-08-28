@@ -1,4 +1,4 @@
-class AeroportosController < ApplicationController
+class Api::V1::AeroportosController < ApplicationController
   before_action :set_aeroporto, only: [:show, :update, :destroy]
 
   # GET /aeroportos
